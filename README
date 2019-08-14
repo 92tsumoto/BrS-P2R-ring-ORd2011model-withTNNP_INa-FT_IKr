@@ -1,0 +1,13 @@
+human ventricular myocardial ring model with gap junction and ephaptic couplings.
+Each cell is a cylindrical morphology, length 150 um, width 20um, membrane capacitance 185 pF.
+Each cell is O'Hara et al human ventricular myocyte model, replacing the INa model with tenTusscher et al human ventricular myocyte model and our experimental based Ikr model.
+
+For compile
+
+%aclocal
+%autoconf
+%./configure
+%autoheader
+%automake -a
+%make
+
