@@ -231,7 +231,9 @@ void comp_ito (int site, int patch)
 	ito.taui_CaMK_fast = ito.taui_fast*ito.deltaCaMK_dev*ito.deltaCaMK_rec;
 	ito.taui_CaMK_slow = ito.taui_slow*ito.deltaCaMK_dev*ito.deltaCaMK_rec;
 	//ito.iCaMK = ito.Ai_CaMK_fast*var.u[14] + ito.Ai_CaMK_slow*var.u[15];
-	ito.iCaMK = ito.Ai_CaMK_fast*var.u[14][site][patch] + ito.Ai_CaMK_slow*var.u[15][site][patch];
+	//ito.Ai_CaMK_fast = ito.Ai_fast;
+	//ito.Ai_CaMK_slow = ito.Ai_slow;
+	ito.iCaMK = ito.Ai_fast*var.u[14][site][patch] + ito.Ai_slow*var.u[15][site][patch];
 
 	ito.pCaMK[site][patch] = 1.0/(1.0 + CaMK.Km/CaMK.active[site][patch]);
 	ito.ik[site][patch] = ito.Gto*(var.u[0][site][patch]-var.Ek[site][patch])*((1.0-ito.pCaMK[site][patch])*var.u[10][site][patch]*ito.i 
